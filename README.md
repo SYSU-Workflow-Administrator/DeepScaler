@@ -13,7 +13,18 @@ Service (ECS) platform. The cluster contains eight virtual machines (VMs) runnin
 A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4, Docker 20.10.12. For set-up instructions, refer to [this](setUp-k8s.md).
 ### Setup Istio
 After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio:
-https://istio.io/latest/docs/setup/getting-started/
+
+##Benchmarks
+### Bookinfo
+### Online-boutique
+### Train-ticket
+Deploy the Train-Ticket system on K8S with istio.
+```
+(1) kubectl create -f <(istioctl kube-inject -f ts-deployment-part1.yml)
+(2) kubectl create -f <(istioctl kube-inject -f ts-deployment-part2.yml)
+(3) kubectl create -f <(istioctl kube-inject -f ts-deployment-part3.yml)
+(4) kubectl apply  -f trainticket-gateway.yaml
+```
 ## Requirements
 +   Python 3.6
 +   matplotlib == 3.5.2
