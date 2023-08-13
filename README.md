@@ -14,7 +14,7 @@ A running Kubernetes cluster is required before deploying DeepScaler. The follow
 ### Setup Istio
 After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio:
 
-##Benchmarks
+## Benchmarks
 ### Bookinfo
 ```
 (1) kubectl create -f <(istioctl kube-inject -f /benchmarks/bookinfo/bookinfo.yaml)
@@ -53,10 +53,6 @@ pip install -r requirements.txt
 The information that needs to be configured before model training is stored in config/train_config.yaml, and the processed data sets and various model configuration information are stored in config/train_datasets_speed.yaml. You can modify the tuning parameters yourself.
 
 ## Data
-
-Arranged in chronological order, the raw data encompasses a variety of key metrics for each microservice, including CPU utilization, response time, and Pod replica count. These crucial raw datasets are stored in the data/raw folder. However, before commencing model training, a series of preprocessing steps need to be applied to these raw datasets to transform them into time-slice data suitable for training the model.
-
-This preprocessing procedure encompasses several stages, one of which involves executing the xxx.py script. This script converts the raw data into a more workable format, facilitating the effective execution of subsequent model training. The preprocessed data resulting from this procedure will be directed to the data/processed folder, serving as input for the forthcoming model training process.
 
 Step 1: Simulate the load generator
 
