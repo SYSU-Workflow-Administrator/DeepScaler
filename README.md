@@ -2,7 +2,7 @@
 ![Static Badge](https://img.shields.io/badge/python-3.6-blue) ![Static Badge](https://img.shields.io/badge/PyTorch-red) 
 
 <p align="center">
-<img src="https://github.com/SYSU-Workflow-Administrator/Deepscaler/blob/main/overview2.png" height = "460" alt="" align=center />
+<img src="https://github.com/SYSU-Workflow-Administrator/Deepscaler/blob/main/overview.png" height = "460" alt="" align=center />
 <br><br>
 <b>Figure 1.</b> Deepscaler Overview.
 </p>
