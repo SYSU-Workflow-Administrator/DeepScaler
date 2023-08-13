@@ -1,11 +1,11 @@
 ## Setup Kubernetes Cluster
 
-The implementation of FIRM is based on Kubernetes.
+The implementation of DeepScaler is based on Kubernetes.
 
 ### Install Docker
 
 - Update the package list: `sudo apt update`.
-- Install Docker: `sudo apt install docker.io` (tested on Docker version 19.03.5).
+- Install Docker: `sudo apt install docker.io` (tested on Docker version 20.10.12).
 - Check the installation and version: `docker -v`.
 - Repeat the process on each machine that will act as a node in the Kubernetes cluster.
 
@@ -30,9 +30,9 @@ The implementation of FIRM is based on Kubernetes.
 
 - [**ALL**] Disable the swap memory on each server: `sudo swapoff -a`.
 - [**ALL**] Assign unique hostname for each server node: `sudo hostnamectl set-hostname your_hostname`.
-- [**MASTER**] Initialize Kubernetes on the master node: `sudo kubeadm init --pod-network-cidr=10.244.0.0/16`.
+- [**MASTER**] Initialize Kubernetes on the master node: `sudo kubeadm init --pod-network-cidr=xxx`.
     - Once this command finishes, it will display a `kubeadm join` message at the end. Make a note of the whole entry because it will be used to join the worker nodes to the cluster.
-    - `--pod-network-cidr=10.244.0.0/16` is for the flannel virtual network to work.
+    - `--pod-network-cidr=xxx` is for the flannel virtual network to work.
 - [**MASTER**] Create a directory for the cluster:
     - `mkdir -p $HOME/.kube`;
     - `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`;
@@ -48,11 +48,11 @@ The implementation of FIRM is based on Kubernetes.
 ```
 ubuntu@dvorak:~$ kubectl get nodes
 NAME         STATUS   ROLES    AGE   VERSION
-dvorak       Ready    master   22m   v1.17.2
-dvorak-2-1   Ready    worker   18m   v1.17.2
-dvorak-2-2   Ready    worker   16m   v1.17.2
-dvorak-2-3   Ready    worker   16m   v1.17.2
-dvorak-2-4   Ready    worker   15m   v1.17.2
+dvorak       Ready    master   22m   v1.23.4
+dvorak-2-1   Ready    worker   18m   v1.23.4
+dvorak-2-2   Ready    worker   16m   v1.23.4
+dvorak-2-3   Ready    worker   16m   v1.23.4
+dvorak-2-4   Ready    worker   15m   v1.23.4
 ...
 ```
 
