@@ -16,14 +16,22 @@ After having a cluster running a supported version of Kubernetes, installing Ist
 
 ##Benchmarks
 ### Bookinfo
+```
+(1) kubectl create -f <(istioctl kube-inject -f /benchmarks/bookinfo/bookinfo.yaml)
+(2) kubectl apply  -f /benchmarks/bookinfo/bookinfo-gateway.yaml)
+```
 ### Online-boutique
+```
+(1) kubectl create -f <(istioctl kube-inject -f /benchmarks/boutique/boutique.yaml)
+(2) kubectl apply  -f /benchmarks/boutique/boutique-gateway.yaml)
+```
 ### Train-ticket
 Deploy the Train-Ticket system on K8S with istio.
 ```
-(1) kubectl create -f <(istioctl kube-inject -f ts-deployment-part1.yml)
-(2) kubectl create -f <(istioctl kube-inject -f ts-deployment-part2.yml)
-(3) kubectl create -f <(istioctl kube-inject -f ts-deployment-part3.yml)
-(4) kubectl apply  -f trainticket-gateway.yaml
+(1) kubectl create -f <(istioctl kube-inject -f /benchmarks/train-ticket/ts-deployment-part1.yml)
+(2) kubectl create -f <(istioctl kube-inject -f /benchmarks/train-ticket/ts-deployment-part2.yml)
+(3) kubectl create -f <(istioctl kube-inject -f /benchmarks/train-ticket/ts-deployment-part3.yml)
+(4) kubectl apply  -f /benchmarks/train-ticket/trainticket-gateway.yaml
 ```
 ## Requirements
 +   Python 3.6
