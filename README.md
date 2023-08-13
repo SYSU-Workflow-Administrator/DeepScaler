@@ -10,7 +10,7 @@ This repository contains a prototyped version of DeepScaler described in our ASE
 The experimental evaluation was conducted on a distributed cluster deployed in a public Elastic Compute
 Service (ECS) platform. The cluster contains eight virtual machines (VMs) running Ubuntu 18.04 LTS operating system with kernel version 4.15.0. Half of the VMs each have a 12-core 2.2 GHz CPU, 24 GB memory, and 100GB disk. Each of the other VMs has a 24-core 2.2 GHz CPU, 32 GB memory, and 500 GB disk. All the VMs are in the same local area network to reduce the network jitters. We used the Kubernetes container orchestration system to manage the deployment of microservices on the cluster and Istio service mesh to take over network traffic and provide load balancing.
 ### Setup Kubernetes Cluster
-A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4, Docker 20.10.12, Istio 1.13.1. For set-up instructions, refer to this.
+A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4, Docker 20.10.12, Istio 1.13.1. For set-up instructions, refer to [this](setup-k8s.md).
 
 ## Requirements
 +   Python 3.6
