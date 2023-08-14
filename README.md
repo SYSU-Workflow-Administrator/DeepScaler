@@ -74,16 +74,18 @@ You can refer to this [webpage](https://blog.techbridge.cc/2019/05/29/how-to-use
 The information that needs to be configured before model training is stored in [config/train_config.yaml](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/config/train_config.yaml), and the processed data sets and various model configuration information are stored in [config/train_datasets_speed.yaml](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/config/train_datasets_speed.yaml). You can modify the tuning parameters yourself.
 
 
-## Data
-
-Step 1: Simulate the load generator
-
-Raw data needs to send flow to simulate real user data
-
-
-
-Step 2: Collect the original dataset
-
+## Train and Test
+Collect the original dataset including cpu usage, mem usage, response time, requests/s and pods.
+```
+template = {
+    "cpu":"sum(irate(container_cpu_usage_seconds_total{{container=~'{1}',namespace=~'{0}'}}[1m]))/sum(container_spec_cpu_quota{{container=~'{1}',namespace=~'{0}'}}/container_spec_cpu_period{{container=~'{1}',namespace=~'{0}'}})",
+    "mem": "sum(container_memory_usage_bytes{{namespace='{0}',container='{1}'}}) / sum(container_spec_memory_limit_bytes{{namespace='{0}',container='{1}'}})",
+    "res": "sum(rate(istio_request_duration_milliseconds_sum{{reporter='destination',destination_workload_namespace='{0}',destination_workload='{1}'}}[{2}]))/sum(rate(istio_request_duration_milliseconds_count{{reporter='destination',destination_workload_namespace='{0}',destination_workload='{1}'}}[{2}]))/1000",
+    "req": "sum(rate(istio_requests_total{{destination_workload_namespace='{0}',destination_workload='{1}'}}[{2}]))",
+    "pod": "count(container_spec_cpu_period{{namespace='{0}',container='{1}'}})"
+}
+```
+Run this code, and the data will be stored in the folder location you have set.
 ```
 python metrics_fetch.py
 ```
@@ -94,7 +96,6 @@ Step 3: Process the dataset
 python prepareData.py
 ```
 
-## Train and Test
 
 We provide a more detailed and complete command description for training and testing the model:
 
