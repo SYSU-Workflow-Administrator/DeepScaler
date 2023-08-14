@@ -20,6 +20,7 @@ Clone the repository to the same location on every node.
 +   numpy == 1.21.5
 +   pandas == 1.4.4
 +   torch == 1.13.1
++   
 Prerequisite: ```pip3 install -r requirements.txt```
 
 ### Setup Prometheus
