@@ -130,7 +130,7 @@ python -u main.py
 | max_graph_num     | Volume of adjacency matrix set |
 
 More parameter information please refer to main.py.
-
+The models exported after running the file are stored in the [model_states](https://github.com/SYSU-Workflow-Administrator/DeepScaler/tree/main/model_states).
 
 ## Autoscaling
 
