@@ -28,6 +28,7 @@ For detailed installation steps, please refer to [this](https://prometheus.io/do
 
 ### Setup Grafana
 Grafana is a popular open-source platform for visualizing and analyzing metrics from various data sources. For detailed installation steps, please refer to [this](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/).
+For the sake of convenience, after installing Grafana, you can directly import the [grafana.json](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/grafana.json) file through the dashboard to monitor the system data source.
 
 ### Setup Istio
 Istio is an open-source service mesh platform that enhances the management and security of microservices in a distributed application. After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio:
