@@ -89,7 +89,15 @@ Run this code, and the data will be stored in the folder location you have set.
 ```
 python metrics_fetch.py
 ```
-
+```
+#Here's "Online-Boutique" example:
+prefix_api = "http://localhost:30090/api/v1/query?query="
+namespace = 'boutiquessj'
+interval = 120
+services = ["adservice", "cartservice", "checkoutservice","currencyservice","emailservice","frontend","paymentservice","productcatalogservice","recommendationservice","shippingservice"]
+metrics = ['cpu','res','req','mem','pod']
+training_root_dir = ''
+```
 Step 3: Process the dataset
 
 ```
