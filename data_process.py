@@ -253,6 +253,6 @@ for i in range(timeLen):
     
 xx=xx.numpy()
 print(xx.shape)
-np.savez("/data/train//sumhab1", xx)###生成原始的序列数据
+np.savez("/data/train1", xx)###生成原始的序列数据
 ### for test
-all_data = read_and_generate_dataset(graph_signal_matrix_filename='/data/train/sumhab1.npz', num_of_hours=1, num_for_predict=1, points_per_hour=80, save=True)
+all_data = read_and_generate_dataset(graph_signal_matrix_filename='/data/train1.npz', num_of_hours=1, num_for_predict=1, points_per_hour=80, save=True)
