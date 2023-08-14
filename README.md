@@ -12,6 +12,25 @@ Service (ECS) platform. The cluster contains eight virtual machines (VMs) runnin
 ### Setup Kubernetes Cluster
 A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4, Docker 20.10.12. For set-up instructions, refer to [this](setUp-k8s.md).
 
+## Deploy DeepScaler
+Clone the repository to the same location on every node.
+### Requirements
++   Python 3.6
++   matplotlib == 3.5.2
++   numpy == 1.21.5
++   pandas == 1.4.4
++   torch == 1.13.1
+Prerequisite: ```pip3 install -r requirements.txt```
+
+### Setup Prometheus
+Prometheus is an open-source monitoring and alerting toolkit used for collecting and storing metrics from various systems.
+For detailed installation steps, please refer to [this](https://prometheus.io/docs/introduction/first_steps/).
+
+### Setup Grafana
+Grafana is a popular open-source platform for visualizing and analyzing metrics from various data sources. For detailed installation steps, please refer to [this](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/).
+
+### Setup Istio
+Istio is an open-source service mesh platform that enhances the management and security of microservices in a distributed application. After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio:
 
 ## Benchmarks
 ### Bookinfo
@@ -32,27 +51,6 @@ Deploy the Train-Ticket system on K8S with istio.
 (3) kubectl create -f <(istioctl kube-inject -f /benchmarks/train-ticket/ts-deployment-part3.yml)
 (4) kubectl apply  -f /benchmarks/train-ticket/trainticket-gateway.yaml
 ```
-## Deploy DeepScaler
-Clone the repository to the same location on every node.
-### Requirements
-+   Python 3.6
-+   matplotlib == 3.5.2
-+   numpy == 1.21.5
-+   pandas == 1.4.4
-+   torch == 1.13.1
-Prerequisite: ```pip3 install -r requirements.txt```
-
-Setup Prometheus
-Prometheus is an open-source monitoring and alerting toolkit used for collecting and storing metrics from various systems.
-For detailed installation steps, please refer to [this](https://prometheus.io/docs/introduction/first_steps/).
-
-Setup Grafana
-Grafana is a popular open-source platform for visualizing and analyzing metrics from various data sources. For detailed installation steps, please refer to [this](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/).
-
-Setup Istio
-Istio is an open-source service mesh platform that enhances the management and security of microservices in a distributed application. After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio:
-
-
 
 
 
