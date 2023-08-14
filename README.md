@@ -75,7 +75,7 @@ The information that needs to be configured before model training is stored in [
 
 
 ## Train and Test
-Collect the original dataset including cpu usage, mem usage, response time, requests/s and pods.
+1. Collect the original dataset including cpu usage, mem usage, response time, requests/s and pods.
 ```
 template = {
     "cpu":"sum(irate(container_cpu_usage_seconds_total{{container=~'{1}',namespace=~'{0}'}}[1m]))/sum(container_spec_cpu_quota{{container=~'{1}',namespace=~'{0}'}}/container_spec_cpu_period{{container=~'{1}',namespace=~'{0}'}})",
@@ -96,9 +96,8 @@ namespace = 'boutiquessj'
 interval = 120
 services = ["adservice", "cartservice", "checkoutservice","currencyservice","emailservice","frontend","paymentservice","productcatalogservice","recommendationservice","shippingservice"]
 metrics = ['cpu','res','req','mem','pod']
-training_root_dir = ''
 ```
-Step 3: Process the dataset
+2. Process the dataset: Transform the raw dataset into a time-sliced dataset for model training and learning. 
 
 ```
 python prepareData.py
