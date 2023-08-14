@@ -101,10 +101,10 @@ metrics = ['cpu','res','req','mem','pod']
 
 ```
 python data_process.py
-#train:valid:test=50:25:25
 ```
 You can modify the storage location and monitoring time periods to generate the train, valid, and test datasets with a distribution of 50% for training, 25% for validation, and 25% for testing.
 
+3. Export the well-trained model
 
 We provide a more detailed and complete command description for training and testing the model:
 
