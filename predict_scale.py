@@ -308,7 +308,7 @@ def main(args):
             shippingservice_req=np.array([shippingservice_req])
         shippingservice_req = shippingservice_req[:,np.newaxis]
 
-        ###req
+        ###mem
         # "adservice"
         file = '/dataForPredict/1_{}_{}.log'.format(services[0],metrics[3])
         adservice_mem=np.genfromtxt(file, dtype=np.double)
