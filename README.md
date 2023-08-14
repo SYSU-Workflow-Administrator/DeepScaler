@@ -61,7 +61,7 @@ We utilize the [Locust](https://locust.io/) load testing tool, an open-source to
 The generated workload intensity varied over time, emulating typical characteristics of microservice workloads, including slight increases, slight decreases, sharp increases, sharp decreases, and continuous fluctuations. The flow data simulation script is stored in the [file](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/sendFlow/random-100max.req).
 
 
-The script "xxx" is for simulating user behavior for both "Bookinfo" and "Online-Boutique."
+The script load_generator.py is for simulating user behavior for both "Bookinfo" and "Online-Boutique" and load_generator_train.py is for simulating user behavior for "Train-Ticket."
 
 Simulate the load generator:
 ``` 
