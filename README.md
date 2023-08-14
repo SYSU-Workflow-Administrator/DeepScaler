@@ -50,7 +50,7 @@ Dependencies can be installed using the following command:
 pip install -r requirements.txt
 ```
 
-The information that needs to be configured before model training is stored in config/train_config.yaml, and the processed data sets and various model configuration information are stored in config/train_datasets_speed.yaml. You can modify the tuning parameters yourself.
+The information that needs to be configured before model training is stored in [config/train_config.yaml](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/config/train_config.yaml), and the processed data sets and various model configuration information are stored in [config/train_datasets_speed.yaml](https://github.com/SYSU-Workflow-Administrator/DeepScaler/blob/main/config/train_datasets_speed.yaml). You can modify the tuning parameters yourself.
 
 ## Data
 
