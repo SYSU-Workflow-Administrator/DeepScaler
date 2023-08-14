@@ -33,7 +33,10 @@ Deploy the Train-Ticket system on K8S with istio.
 (3) kubectl create -f <(istioctl kube-inject -f /benchmarks/train-ticket/ts-deployment-part3.yml)
 (4) kubectl apply  -f /benchmarks/train-ticket/trainticket-gateway.yaml
 ```
-## Requirements
+
+
+## Configuration
+### Requirements
 +   Python 3.6
 +   matplotlib == 3.5.2
 +   numpy == 1.21.5
@@ -46,9 +49,6 @@ Dependencies can be installed using the following command:
 ```
 pip install -r requirements.txt
 ```
-
-
-## Configuration
 
 The information that needs to be configured before model training is stored in config/train_config.yaml, and the processed data sets and various model configuration information are stored in config/train_datasets_speed.yaml. You can modify the tuning parameters yourself.
 
