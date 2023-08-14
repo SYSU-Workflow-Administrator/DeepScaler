@@ -100,8 +100,10 @@ metrics = ['cpu','res','req','mem','pod']
 2. Process the dataset: Transform the raw dataset into a time-sliced dataset for model training and learning. 
 
 ```
-python prepareData.py
+python data_process.py
+#train:valid:test=50:25:25
 ```
+You can modify the storage location and monitoring time periods to generate the train, valid, and test datasets with a distribution of 50% for training, 25% for validation, and 25% for testing.
 
 
 We provide a more detailed and complete command description for training and testing the model:
