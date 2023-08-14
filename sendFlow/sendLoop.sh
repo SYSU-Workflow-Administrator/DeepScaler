@@ -9,3 +9,10 @@ do
     wait
     echo "结束流量"
 done
+# while true
+# do
+#     echo "开始发送流量"
+#     nohup locust -f /ssj/ssj/boutiquessj/pyboutique/sendflow/load_generator_train.py --headless > /logs/sendFlow.log2 2>&1 &
+#     wait
+#     echo "结束流量"
+# done
