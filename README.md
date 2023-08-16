@@ -163,6 +163,20 @@ python similarity.py
 ```
 python calculate.py
 ```
+## Citation
+If you find this repository useful in your research, please consider citing the following papers:
+
+```
+@INPROCEEDINGS{1234567,
+  author={Meng, Chunyang and Song, Shijie and Tong, Haogang and Pan, Maolin and Yu, Yang},
+  booktitle={2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)}, 
+  title={DeepScaler: Holistic Autoscaling for Microservices Based on Spatiotemporal GNN with Adaptive Graph Learnin}, 
+  year={2023}
+}
+```
+
+## Contact
+If you have any questions, feel free to contact Shijie Song through Email (songshj6@mail2.sysu.edu.cn) or Github issues. Pull requests are highly welcomed!
 
 
 
