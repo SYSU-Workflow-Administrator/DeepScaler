@@ -1,6 +1,35 @@
 # DeepScaler: Holistic Autoscaling for Microservices Based on Spatiotemporal GNN with Adaptive Graph Learning
 
 ![Static Badge](https://img.shields.io/badge/python-3.6-blue) ![Static Badge](https://img.shields.io/badge/PyTorch-red) 
+- [DeepScaler: Holistic Autoscaling for Microservices Based on Spatiotemporal GNN with Adaptive Graph Learning](#deepscaler--holistic-autoscaling-for-microservices-based-on-spatiotemporal-gnn-with-adaptive-graph-learning)
+  * [Overview](#overview)
+  * [Instructions](#instructions)
+    + [Machine Prerequisited](#machine-prerequisited)
+  * [Deploy DeepScaler](#deploy-deepscaler)
+    + [1. Setup Required Packages](#1-setup-required-packages)
+    + [2. Setup Kubernetes Cluster](#2-setup-kubernetes-cluster)
+    + [3. Setup Prometheus](#3-setup-prometheus)
+    + [4. Setup Locust](#4-setup-locust)
+    + [5. Setup Istio](#5-setup-istio)
+  * [Benchmarks](#benchmarks)
+    + [1. Bookinfo](#1-bookinfo)
+    + [2. Online-boutique](#2-online-boutique)
+    + [3. Train-ticket](#3-train-ticket)
+  * [To Run](#to-run)
+  * [Workload Generation](#workload-generation)
+  * [Train and Test](#train-and-test)
+    + [1. Model Configuration](#1-model-configuration)
+    + [2. Collect the original dataset including cpu usage, mem usage, response time, requests/s and pods.](#2-collect-the-original-dataset-including-cpu-usage--mem-usage--response-time--requests-s-and-pods)
+    + [3. Process the dataset: Transform the raw dataset into a time-sliced dataset for model training and learning.](#3-process-the-dataset--transform-the-raw-dataset-into-a-time-sliced-dataset-for-model-training-and-learning)
+    + [4. Export the well-trained model](#4-export-the-well-trained-model)
+  * [Autoscaling](#autoscaling)
+  * [Evaluation](#evaluation)
+    + [1. Analyze the similarity between the original graph relationship and od, cc.](#1-analyze-the-similarity-between-the-original-graph-relationship-and-od--cc)
+    + [2. Compute relevant metrics.](#2-compute-relevant-metrics)
+  * [Citation](#citation)
+  * [Contact](#contact)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Overview
 This repository contains a prototyped version of DeepScaler described in our ASE '23 paper "DeepScaler: Holistic Autoscaling for Microservices Based on Spatiotemporal GNN with Adaptive Graph Learning".
