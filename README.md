@@ -5,10 +5,11 @@
 - [I. Machine Prerequisite](#i-machine-prerequisite)
 - [II. Installation](#ii-installation)
   * [1. Setup Required Packages](#1-setup-required-packages)
-  * [2. Setup Kubernetes Cluster](#2-setup-kubernetes-cluster)
-  * [3. Setup Prometheus](#3-setup-prometheus)
-  * [4. Setup Locust](#4-setup-locust)
+  * [2. Setup Docker](#2-)
+  * [3. Setup Kubernetes Cluster](#2-setup-kubernetes-cluster)
+  * [4. Setup Prometheus](#3-setup-prometheus)
   * [5. Setup Istio](#5-setup-istio)
+  * [6. Setup Locust](#4-setup-locust)
 - [III. Deployment Microservices](#iii-deployment-microservices)
   * [1. Bookinfo](#1-bookinfo)
   * [2. Online-boutique](#2-online-boutique)
@@ -31,13 +32,14 @@
 ## Overview
 This repository contains a prototyped version of DeepScaler described in our ASE '23 paper "DeepScaler: Holistic Autoscaling for Microservices Based on Spatiotemporal GNN with Adaptive Graph Learning".
 
-## I. Machine Prerequisite
+## I. Machine Prerequis
 
 | **Aspect**                  | **Details**                                                                                                         |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------|
 | Operating System	           | Ubuntu 18.04 LTS                                                                                                    |
 | Kernel Version	             | 4.15.0                                                                                                              |
 | VM Specifications	          | 4 with 12-core 2.2 GHz CPU, 24 GB memory, 100GB disk<br>4 with 24-core 2.2 GHz CPU, 32 GB memory, 500 GB disk |
+| Network | ... |
 
 ## II. Installation
 ### 1. Setup Required Packages
@@ -47,23 +49,25 @@ This repository contains a prototyped version of DeepScaler described in our ASE
 +   torch == 1.13.1
 
  ```pip3 install -r requirements.txt```
+### 2. Setup Docker
+Docker 20.10.12
 
-### 2. Setup Kubernetes Cluster
-A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4, Docker 20.10.12. For set-up instructions, refer to [this](setUp-k8s.md).
+### 3. Setup Kubernetes Cluster
+A running Kubernetes cluster is required before deploying DeepScaler. The following instructions are tested with Kubernetes v1.23.4. For set-up instructions, refer to [this](setUp-k8s.md).
 
 
-### 3. Setup Prometheus
+### 4. Setup Prometheus
 Prometheus is an open-source monitoring and alerting toolkit used for collecting and storing metrics from various systems.
 For detailed installation steps, please refer to [this](https://prometheus.io/docs/introduction/first_steps/).
-
-
-### 4. Setup Locust
-We utilize the [Locust](https://locust.io/) load testing tool, an open-source tool that employs Python code to define user behaviors and simulate millions of users.
 
 ### 5. Setup Istio
 Istio is an open-source service mesh platform that enhances the management and security of microservices in a distributed application. After having a cluster running a supported version of Kubernetes, installing Istio is needed. Follow [these steps](https://istio.io/latest/docs/setup/getting-started/) to get started with Istio.
 
-## III. Deployment Microservices
+### 6. Setup Locust
+We utilize the [Locust](https://locust.io/) load testing tool, an open-source tool that employs Python code to define user behaviors and simulate millions of users.
+
+
+## III. Deploye Benchmark Microservices
 ### 1. Bookinfo
 ```
 (1) kubectl create -f <(istioctl kube-inject -f /benchmarks/bookinfo/bookinfo.yaml)
@@ -189,7 +193,7 @@ If you find this repository useful in your research, please consider citing the 
 ```
 
 ## IX. Contact
-If you have any questions, feel free to contact Shijie Song through Email (songshj6@mail2.sysu.edu.cn) or Github issues. Pull requests are highly welcomed!
+If you have any questions, feel free to contact Shijie Song through Email (songshj6@mail2.sysu.edu.cn, mengchy3@mail2.sysu.edu.cn) or Github issues. Pull requests are highly welcomed!
 
 
 
